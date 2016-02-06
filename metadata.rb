@@ -5,7 +5,7 @@ maintainer       'Ben Dang'
 maintainer_email 'me@bdang.it'
 license          'MIT'
 description      'InfluxDB, a timeseries database'
-version          '4.0.1'
+version          '4.1.0'
 
 # For CLI client
 # https://github.com/redguide/nodejs
@@ -20,7 +20,8 @@ depends 'apt', '~> 2.7'
 depends 'yum', '~> 3.6'
 
 # For compatibility with 12.X versions of Chef
-depends 'compat_resource'
+# FIXME: unpin version until https://github.com/chef-cookbooks/compat_resource/issues/37 is resolved
+depends 'compat_resource', '= 12.5.0'
 
 chef_version '>= 12.0' if respond_to?(:chef_version)
 source_url 'https://github.com/bdangit/chef-influxdb' if respond_to?(:source_url)
